@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   imageTextContainer: {
-    paddingTop: 10,
+    padding: 10,
   },
   imageText: {
     fontSize: 30,
@@ -56,7 +56,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 10,
     marginTop: 10,
-    width: 150,
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "90%",
   },
   labelStyle: {
     textAlign: "center",

@@ -6,10 +6,18 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
+
 import { AntDesign } from "@expo/vector-icons";
 import Button from "../UI/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const Header = () => {
+  const navigation = useNavigation();
+
+  const handleNavigate = () => {
+    navigation.navigate("Search");
+  };
+
   return (
     <View>
       <ImageBackground
@@ -22,14 +30,18 @@ const Header = () => {
           <AntDesign name="search1" size={18} color="#C71585" />
           <TextInput
             placeholder="where you want to go?"
-            style={{ color: "black", fontSize: 16, paddingHorizontal: 10 }}
+            style={{
+              color: "black",
+              fontSize: 16,
+              paddingHorizontal: 10,
+            }}
           />
         </View>
         <Button
           buttonStyle={styles.button}
           labelStyle={styles.label}
           label="I'm flexible"
-          onPress={() => console.log("test")}
+          onPress={handleNavigate}
         />
         <View
           style={{ marginLeft: "auto", marginRight: "auto", marginBottom: 20 }}
@@ -54,7 +66,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     width: 220,
     padding: 6,
-    borderRadius: 16,
+    borderRadius: 99,
   },
   button: {
     width: 120,

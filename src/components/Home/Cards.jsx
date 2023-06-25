@@ -5,7 +5,7 @@ import { cardList } from "../../../utils/const";
 
 const Cards = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.title}>Inspiration for your Next trip</Text>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {cardList.map((item, idx) => {
@@ -25,4 +25,12 @@ const Cards = () => {
 
 export default Cards;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "600",
+  },
+});
