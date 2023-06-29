@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Image,
   ImageBackground,
   Pressable,
   StyleSheet,
@@ -8,11 +7,46 @@ import {
   View,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-const SearchItem = ({ img, location, price, distance }) => {
+const SearchItem = ({
+  id,
+  img,
+  description,
+  lat,
+  location,
+  person,
+  price,
+  review,
+  star,
+  title,
+  total,
+  distance,
+  image,
+}) => {
+  const navigation = useNavigation();
+
+  const handleNavigation = () => {
+    navigation.navigate("Reserve", {
+      id,
+      img,
+      description,
+      lat,
+      location,
+      person,
+      price,
+      review,
+      star,
+      title,
+      total,
+      distance,
+      image,
+    });
+  };
+
   return (
     <View>
-      <Pressable style={styles.container} onPress={() => console.log("1")}>
+      <Pressable style={styles.container} onPress={handleNavigation}>
         <ImageBackground source={{ uri: img }} style={styles.image}>
           <Pressable
             style={styles.imageButton}

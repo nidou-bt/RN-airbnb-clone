@@ -20,7 +20,7 @@ const SearchScreen = () => {
     <View>
       <FlatList
         data={data}
-        renderItem={({ item }) => <SearchItem {...item} />}
+        renderItem={({ item }) => <SearchItem id={item.key} {...item} />}
         showsVerticalScrollIndicator={false}
       />
     </View>
